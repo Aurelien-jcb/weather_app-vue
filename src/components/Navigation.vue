@@ -21,6 +21,12 @@ export default {
   background-color: #f29100;
 }
 header {
+  z-index: 99;
+  position: fixed;
+  max-width: 1024px;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   nav {
     display: flex;
     color: #fff;
@@ -28,16 +34,16 @@ header {
     justify-content: space-between;
   }
   .icon__section {
-      i {
-          font-size: 20px;
-      }
+    i {
+      font-size: 20px;
+    }
     i:nth-child(2),
     i:nth-child(3) {
       margin-left: 20px;
     }
   }
   span {
-      font-weight: 600;
+    font-weight: 600;
   }
 }
 </style>

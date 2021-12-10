@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <Navigation class="navigation" />
-    <router-view />
+    <Navigation />
+    <router-view v-bind:cities="cities"/>
   </div>
 </template>
 
@@ -45,9 +45,6 @@ export default {
                 })
                 .then(() => {
                   this.cities.push(doc.doc.data());
-                })
-                .then(() => {
-                  console.log(this.cities);
                 });
             } catch (err) {
               console.log(err);
@@ -69,15 +66,10 @@ export default {
 }
 
 .main {
+  max-width: 1024px;
+  margin: 0 auto;
   height: 100vh;
-  .navigation {
-    z-index: 99;
-    position: fixed;
-    max-width: 1024px;
-    width: 100%;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
+  
   .container {
     padding: 0 20px;
   }
