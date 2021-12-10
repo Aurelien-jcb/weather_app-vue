@@ -3,7 +3,7 @@ node_modules
 /dist
 
 # firebase
-/firebasseinit.js
+/firebaseinit.js
 
 # local env files
 .env.local
