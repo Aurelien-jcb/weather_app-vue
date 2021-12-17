@@ -34,7 +34,7 @@ export default {
 
       firebaseDB.onSnapshot((snap) => {
         snap.docChanges().forEach(async (doc) => {
-          if (doc.type === "added") {
+          if (doc.type === "added" && !doc.doc.Nd) {
             try {
               const response = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${
@@ -53,6 +53,8 @@ export default {
             } catch (err) {
               console.log(err);
             }
+          } else if(doc.type === "added" && doc.doc.Nd) {
+             this.cities.push(doc.doc.data());
           }
         });
       });

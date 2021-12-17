@@ -4,7 +4,7 @@
       <span>Ajouter une ville</span>
       <div class="icon__section">
         <i class="far fa-edit"></i>
-        <i class="fas fa-sync"></i>
+        <i @click="reloadApp" class="fas fa-sync"></i>
         <i @click="addCity" class="fas fa-plus"></i>
       </div>
     </nav>
@@ -17,6 +17,9 @@ export default {
   methods: {
     addCity() {
       this.$emit('add-city');
+    },
+    reloadApp() {
+      location.reload();
     }
   }
 };
@@ -40,6 +43,7 @@ header {
   }
   .icon__section {
     i {
+      cursor: pointer;
       font-size: 20px;
     }
     i:nth-child(2),
