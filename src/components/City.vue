@@ -1,5 +1,6 @@
 <template>
   <div class="city__container">
+    <i class="far fa-trash-alt edit" ref="edit" ></i>
     <span class="city__name">{{ this.city.city }}</span>
     <div class="city__weather">
       <span>{{ Math.round(this.city.currentWeather.main.temp) }} &deg;</span>
@@ -44,6 +45,9 @@ export default {
   min-height: 250px;
   color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  .edit {
+    
+  }
   .city__name {
     z-index: 1;
     text-transform: capitalize;

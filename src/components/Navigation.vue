@@ -3,7 +3,7 @@
     <nav>
       <span>Ajouter une ville</span>
       <div class="icon__section">
-        <i class="far fa-edit"></i>
+        <i @click="deleteItem" class="far fa-edit"></i>
         <i @click="reloadApp" class="fas fa-sync"></i>
         <i @click="addCity" class="fas fa-plus"></i>
       </div>
